@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOTBRIDGE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4ff;
+            color: #222;
+        }
+
+        /* Header */
+        header {
+            background: #123c80;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #101828;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #70b7ff;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 150px;
+            top: 25px;
+            box-shadow: 0 4px 10px #aaa;
+            border-radius: 8px;
+            z-index: 2;
+        }
+
+        .dropdown-content a {
+            display: block;
+            color: #123c80;
+            padding: 12px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background: #e4edff;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h2 {
+            color: #123c80;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .hero button {
+            background: #123c80;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 7px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background: #071e46;
+        }
+
+        /* Moving Text */
+        .marquee {
+            background: #123c80;
+            color: white;
+            padding: 13px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee span {
+            display: inline-block;
+            animation: move 12s linear infinite;
+        }
+
+        @keyframes move {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        /* Flexbox Cards */
+        .container {
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .container h2 {
+            color: #123c80;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #ccd5e5;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 18px #aabbd6;
+        }
+
+        .card h3 {
+            color: #123c80;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Loader */
+        .loader {
+            width: 35px;
+            height: 35px;
+            border: 5px solid #ddd;
+            border-top: 5px solid #123c80;
+            border-radius: 50%;
+            margin: 15px auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Progress */
+        .progress {
+            background: #ddd;
+            height: 12px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            background: #123c80;
+            width: 75%;
+            height: 12px;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #101828;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>BOTBRIDGE</h1>
+        <p>Smart AI Chatbot & Automation Platform</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+
+        <div class="dropdown">
+            <a href="#features">Features ▼</a>
+            <div class="dropdown-content">
+                <a href="#features">AI Chatbots</a>
+                <a href="#features">Automation</a>
+                <a href="#features">Communication</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#services">Services ▼</a>
+            <div class="dropdown-content">
+                <a href="#services">AI Assistance</a>
+                <a href="#services">Customer Support</a>
+                <a href="#services">Business Solutions</a>
+            </div>
+        </div>
+
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <h2>Welcome to BOTBRIDGE</h2>
+        <p>
+            Connect your business with intelligent AI technology.
+            <br>
+            Automate tasks and improve customer communication.
+        </p>
+        <button onclick="alert('Welcome to BOTBRIDGE!')">
+            Explore BOTBRIDGE
+        </button>
+    </section>
+
+    <div class="marquee">
+        <span>
+            Welcome to BOTBRIDGE! AI Chatbots | Automation |
+            Smart Communication | 24/7 Customer Support
+        </span>
+    </div>
+
+    <section class="container" id="features">
+        <h2>Our Features</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>AI Chatbots</h3>
+                <p>Intelligent customer conversations using AI technology.</p>
+            </div>
+
+            <div class="card">
+                <h3>Automation</h3>
+                <p>Automate repetitive tasks and save valuable time.</p>
+                <div class="loader"></div>
+            </div>
+
+            <div class="card">
+                <h3>Smart Communication</h3>
+                <p>Connect businesses and customers easily.</p>
+            </div>
+
+            <div class="card">
+                <h3>24/7 Assistance</h3>
+                <p>Get customer support anytime with AI chatbots.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container" id="services">
+        <h2>Our Services</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>AI Integration</h3>
+                <p>Bring intelligent AI solutions into your business.</p>
+            </div>
+
+            <div class="card">
+                <h3>Customer Support</h3>
+                <p>Provide fast and reliable customer assistance.</p>
+            </div>
+
+            <div class="card">
+                <h3>Task Automation</h3>
+                <p>Improve business productivity through automation.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Service Performance</h2>
+        <div class="card" style="margin:auto;">
+            <h3>Automation Progress</h3>
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h3>BOTBRIDGE</h3>
+        <p>Connecting Businesses Through Intelligent AI.</p>
+        <p>© 2026 BOTBRIDGE | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
